@@ -29,6 +29,44 @@ void display(){
 	}
 }
 
+void add(){
+
+	do{
+		if(pos<max){
+			cin.ignore();
+			cout<<"Nama : ";
+			getline(cin, n[pos]);
+			cout<<"NIP : ";
+			getline(cin, nip[pos]);
+			cout<<"Usia : ";
+			getline(cin, u[pos]);
+			cout<<"Jenis Kelamin : ";
+			getline(cin, jk[pos]);
+			cout<<"Status : ";
+			getline(cin, s[pos]);
+			cout<<"Pendidikan : ";
+			getline(cin, pend[pos]);
+			cout<<"Pekerjaan : ";
+			getline(cin, pk[pos]);
+			cout<<"Tempat Tugas : ";
+			getline(cin, tt[pos]);
+			cout<<"Golongan : ";
+			getline(cin, gol[pos]);
+			cout<<"Gaji : ";
+			getline(cin, g[pos]);
+			pos++;
+			cout<<"ulangi (y/t) : ";
+			cin>>loop;
+		}else{
+			cout<<"memori penuh"<<endl;
+			cout<<"isi t untuk kembali";
+			cin>>loop;
+		}
+	
+	}while(loop=="y");
+	cout<<"Tambahkan Data"<<endl;
+}
+
 void edit(){
 	int y, k;
 	do{
@@ -102,6 +140,7 @@ int main(){
 	int pil;
 	do{
 		system("cls");
+		cout<<"1. Tambah Data\n";
 		cout<<"2. Tampilkan Data\n";
 		cout<<"3. Edit Data\n";
 		cout<<"4. Hapus Data\n";
@@ -109,6 +148,9 @@ int main(){
 		cout<<"Pilihan : ";
 		cin>>pil;
 		switch(pil){
+		case 1:
+			add();
+			break;
 		case 2:
 			do{
 			display();
