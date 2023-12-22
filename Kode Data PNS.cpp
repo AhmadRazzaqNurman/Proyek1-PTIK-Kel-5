@@ -5,6 +5,30 @@ using namespace std;
 string n[max], nip[max], u[max], jk[max], s[max], pend[max], pk[max], tt[max], gol[max], g[max], loop;
 int pos=0;
 
+void display(){
+	system("cls");
+	if(pos>0){
+		cout<<"Data Tersimpan"<<endl;
+		for(int a=0; a<pos; a++)
+			cout<<"Data PNS ke- "<<a+1<<endl;
+			for(int q=0; q<pos; q++){
+			cout<<q+1<<".  Nama : "<<n[q]<<endl;
+			cout<<q+2<<".  NIP : "<<nip[q]<<endl;
+			cout<<q+3<<".  Usia : "<<u[q]<<endl;
+			cout<<q+4<<".  Jenis Kelamin : "<<jk[q]<<endl;
+			cout<<q+5<<".  Status : "<<s[q]<<endl;
+			cout<<q+6<<".  Pendidikan : "<<pend[q]<<endl;
+			cout<<q+7<<".  Pekerjaan : "<<pk[q]<<endl;
+			cout<<q+8<<".  Tempat Tugas : "<<tt[q]<<endl;
+			cout<<q+9<<".  Golongan : "<<gol[q]<<endl;
+			cout<<q+10<<".  Gaji : " <<g[q]<<endl;
+			cout<<"       "<<endl;
+		}
+	} else{
+		cout<<"Data Kosong"<<endl;
+	}
+}
+
 void edit(){
 	int y, k;
 	do{
@@ -78,12 +102,20 @@ int main(){
 	int pil;
 	do{
 		system("cls");
+		cout<<"2. Tampilkan Data\n";
 		cout<<"3. Edit Data\n";
 		cout<<"4. Hapus Data\n";
 	
 		cout<<"Pilihan : ";
 		cin>>pil;
 		switch(pil){
+		case 2:
+			do{
+			display();
+			cout<<"kembali (y) : ";
+			cin>>loop;
+		}while(loop !="y");
+			break;
 		case 3:
 			edit();
 			break;
